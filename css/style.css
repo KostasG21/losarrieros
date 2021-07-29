@@ -140,11 +140,12 @@ we need a grey background and not a white rgba(0,0,0) when zooming on navbar
 	background-color: transparent; 
 
 }
-#menu.navbar-default .navbar-nav > li > a:hover {
+#menu.navbar-default .navbar-nav > li > a:not(#mula):hover {
 	color: #fff; /*#8eb640;*/
 	background-color: #F08114;
 	border-radius: 5px;
 }
+
 .on {
 	background-color: #262626 !important;
 	padding: 0 !important;

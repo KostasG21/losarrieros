@@ -55,33 +55,26 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#page-top" class="page-scroll">Inicio</a></li>
-        <li><a href="#restaurant-menu" class="page-scroll">Menú</a></li>
-        <li><a href="#ecommerce" class="page-scroll">Compras</a></li>
-				
-        <li class="dropdown">
+      <ul class="nav navbar-nav navbar-right" style="margin-top:5px;">
+        <li><a href="#page-top" class="page-scroll">Home</a></li>
+        <li><a href="#restaurant-menu" class="page-scroll">Restaurante</a></li>
+        <li><a href="#ecommerce" class="page-scroll" id="mula">
+			<img src="img/mula.svg" class="fq-zoom" style="width:60px; margin-top:-32px; padding-top:0;" alt="mula Los Arrieros" />
+		</a></li>
+		<li><a href="#about" class="page-scroll">Nuestra historia</a></li>
+		<li><a href="#contact" class="page-scroll">Contáctenos</a></li>		
+        
+		<!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			Servicios <span class="caret"></span></a>
           <ul class="dropdown-menu" style="left:0; border-radius:4px;">            
-            <li><a class="dropdown-item" href="#call-reservation">Reservar</a></li>
-            <li><a class="dropdown-item" href="#contact">Contactar</a></li>
+            <li><a class="dropdown-item" href="#call-reservation">Reservar</a></li>            
             <li role="separator" class="divider"></li>
             <li><a class="dropdown-item" href="#portfolio">Galería menú</a></li>
 			<li><a class="dropdown-item" href="#ecommerce">Galería productos</a></li>
           </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			Blog <span class="caret"></span></a>
-          <ul class="dropdown-menu" style="left:0; border-radius:4px;">
-            <li><a class="dropdown-item" href="#page-top">Blog</a></li>
-            <li><a class="dropdown-item" href="#page-top">Recetas</a></li>
-          </ul>
-        </li>
+        </li> -->
 		
-        <li><a href="#about" class="page-scroll">Nosotros</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse --> 
@@ -114,7 +107,7 @@
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="about-text">
-          <h2>Algo de historia</h2>
+          <h2>Nuestra historia</h2>
           <hr>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
           <h3>Reconocimientos</h3>
@@ -393,7 +386,7 @@
   <div class="overlay">
     <div class="container">
       <div class="col-md-10 col-md-offset-1 section-title">
-        <h2>Galería de productos</h2>
+        <h2>Tienda online</h2>
         <hr>
         <p>Productos cárnicos de excelente calidad para comprar en línea.</p>
       </div>
@@ -525,11 +518,11 @@
 	function scrollFunction() {
 	  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {			
 		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.9))";
-		document.getElementById("logolosarrieros").style.width = "180px";
+		document.getElementById("logolosarrieros").style.width = "160px";
 		document.getElementById("logolosarrieros").style.marginTop = "-22px";	
 	  } else {
 		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))";
-		document.getElementById("logolosarrieros").style.width = "250px";
+		document.getElementById("logolosarrieros").style.width = "200px";
 		document.getElementById("logolosarrieros").style.marginTop = "-32px";
 	  }
 	}
