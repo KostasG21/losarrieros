@@ -42,7 +42,7 @@ p.intro {
 	line-height: 24px;
 }
 a {
-	color: #8eb640;
+	color: #F08114; /* #8eb640; verde limon */
 }
 a:hover, a:focus {
 	text-decoration: none;
@@ -78,7 +78,7 @@ hr {
 	width: 70px;
 	text-align: center;
 	position: relative;
-	background: #8eb640;
+	background: #F08114; /* #8eb640 verde limon */
 	margin: 0;
 	margin-bottom: 40px;
 	border: 0;
@@ -99,7 +99,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 we need a grey background and not a white rgba(0,0,0) when zooming on navbar 
 -------------------------------------------------------------------*/
 
-.fq-zoom {
+.fq-zoom, .fq-zoom-shadow {
   transition: transform .5s ease-in-out;
 }
 
@@ -110,6 +110,16 @@ we need a grey background and not a white rgba(0,0,0) when zooming on navbar
   transform: scale(1.2); 
 }
 
+.fq-zoom-shadow:hover {
+  box-shadow: 0 4px 4px rgba(248, 249, 250, 0.25), 4px 4px 4px rgba(248, 249, 250, 0.22);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 	
+}
+
+.activo {
+	color: #F0D014 !important;
+}
 
 /* Navigation */
 #menu {
@@ -117,14 +127,19 @@ we need a grey background and not a white rgba(0,0,0) when zooming on navbar
 	transition: all 0.8s;
 }
 #menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
-	border-color: rgba(231, 231, 231, 0);
+		border-color: rgba(231, 231, 231, 0);
+	background: -moz-linear-gradient(top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#ADADAD', GradientType=0 ); /* IE6-9 */
+	/*background-color: rgba(248, 248, 248, 0);
+	border-color: rgba(231, 231, 231, 0);*/
 }
 #menu a.navbar-brand {
 	font-family: 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
 	/*font-family: 'Dancing Script', cursive;*/
 	font-size: 36px;
-	color: #8eb640;
+	color: #F08114; /* #8eb640; verde limon*/
 	font-weight: 700;
 	letter-spacing: 1px;
 }
@@ -159,8 +174,8 @@ we need a grey background and not a white rgba(0,0,0) when zooming on navbar
 	border-radius: 0;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #8eb640;
-	border-color: #8eb640;
+	background-color: #F08114; /* #8eb640; verde limon*/
+	border-color: #F08114; /* #8eb640; */
 }
 .navbar-default .navbar-toggle:hover>.icon-bar {
 	background-color: #FFF;
@@ -244,11 +259,34 @@ a, .btn {
 	color: #fff;
 	background-color: #3D55A9; /*#628d0f;*/
 }
+
+.btn-custom-sm {
+	/*text-transform: uppercase;*/
+	color: #fff;
+	background-color: #F08114; /*#72a411;*/
+	border: 0;
+	padding: 8px 12px;
+	margin: 0;
+	font-size: 14px;
+	/*font-weight: 500;*/
+	letter-spacing: 0.5px;
+	border-radius: 5px; /*0*/
+	margin-top: 8px;
+	transition: all 0.5s;
+}
+.btn-custom-sm:hover, .btn-custom-sm:focus, .btn-custom-sm.focus, .btn-custom-sm:active, .btn-custom-sm.active {
+	color: #fff;
+	background-color: #3D55A9; /*#628d0f;*/
+}
+
 /* Header Section */
 .intro {
 	display: table;
 	width: 100%;
 	padding: 0;
+}
+
+#intro-hero {
 	background: url(../img/intro_bg.jpg) no-repeat center center;
 	background-color: #e5e5e5;
 	-webkit-background-size: cover;
@@ -256,6 +294,16 @@ a, .btn {
 	background-size: cover;
 	-o-background-size: cover;
 }
+
+#intro-rest {
+	background: url(../img/gallery-bg.jpg) no-repeat center center;
+	background-color: #e5e5e5;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
 .intro .overlay {
 	background: rgba(0,0,0,0.4);
 }
@@ -284,6 +332,7 @@ header .intro-text {
 	padding-bottom: 200px;
 	text-align: center;
 }
+
 /* About Section */
 #about {
 	padding: 120px 0;
@@ -292,7 +341,10 @@ header .intro-text {
 	font-size: 20px;
 }
 #about .about-text {
-	margin-left: 10px;
+	margin-left: 10px;	
+	font-family: 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
+	font-size: 1.2em;
+	color: #000;
 }
 #about .about-img {
 	display: inline-block;
@@ -312,9 +364,25 @@ header .intro-text {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
+
+#recomendados {
+	/* make it flex for centering */  
+	width: 100%; /* necesario para centrar los childs en todo el ancho del div */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* to display one <p> under the other */
+	background: #F6F6F6;	
+	margin-bottom: 20px;
+}
+
 /* Menu Section */
-#restaurant-menu {
+#recomendados  {
 	padding: 0 0 60px 0;
+}
+#restaurant-menu {
+	width: 100%;
+	padding: 0;
 }
 #restaurant-menu .section-title {
 	background: #444 url(../img/menu-bg.jpg) center center no-repeat fixed;
@@ -377,6 +445,56 @@ header .intro-text {
 #portfolio .section-title h2 {
 	color: #fff;
 }
+
+
+#ecommerce-portfolio {
+	padding: 0 0 0 0; /* en portfolio es bottom 120px */
+}
+#ecommerce-portfolio .section-title {
+	background: #444 url(../img/gallery-bg.jpg) center center no-repeat fixed;
+	background-size: cover;
+	margin-bottom: 50px;
+}
+#ecommerce-portfolio .section-title h2 {
+	color: #fff;
+}
+
+#recetas {
+	padding: 0 0 0 0; /* en portfolio es bottom 120px */
+}
+#recetas .section-title {
+	background: #444 url(../img/blog_recetas.jpg) center center no-repeat fixed;
+	background-size: cover;
+	margin-bottom: 50px;
+}
+#recetas .section-title h2 {
+	color: #fff;
+}
+
+#receta {
+	padding: 0 0 0 0; /* en portfolio es bottom 120px */
+}
+#receta .section-title {
+	background: #444 url(../img/flame.jpg) center center no-repeat fixed;
+	background-size: cover;
+	margin-bottom: 50px;
+}
+#receta .section-title h2 {
+	color: #fff;
+}
+
+#nosotros {
+	padding: 0 0 0 0; /* en portfolio es bottom 120px */
+}
+#nosotros .section-title {
+	background: #444 url(../img/arriero_bg.jpg) center center no-repeat fixed;
+	background-size: cover;
+	margin-bottom: 50px;
+}
+#nosotros .section-title h2 {
+	color: #fff;
+}
+
 .categories {
 	padding-bottom: 30px;
 	text-align: center;
@@ -385,7 +503,7 @@ ul.cat li {
 	display: inline-block;
 }
 
-/*..va */
+
 ol.type li {
 	display: inline-block;
 	margin: 0 10px;
@@ -458,6 +576,61 @@ ol.type li a:hover {
 	left: 6px;
 	border: 1px solid rgba(255, 255, 255, 0.6);
 }
+
+.ecommerce-portfolio-item {
+	margin: 15px 0;
+}
+.ecommerce-portfolio-item .hover-bg {
+	overflow: hidden;
+	position: relative;
+}
+.ecommerce-portfolio-item .hover-bg:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	bottom: 6px;
+	left: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.recetas-item {
+	margin: 15px 0;
+}
+.recetas-item .hover-bg {
+	overflow: hidden;
+	position: relative;
+}
+.recetas-item .hover-bg:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	bottom: 6px;
+	left: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.receta-item {
+	margin: 15px 0;
+}
+.receta-item .hover-bg {
+	overflow: hidden;
+	position: relative;
+}
+.receta-item .hover-bg:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	bottom: 6px;
+	left: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
 .hover-bg .hover-text {
 	position: absolute;
 	text-align: center;
@@ -497,14 +670,17 @@ ol.type li a:hover {
 	background-size: cover;
 }
 #ecommerce .overlay {
-	padding: 120px 0 80px 0;
+	padding: 10px 0 80px 0; /* era 120px top */
 	background: rgba(0, 0, 0, 0.6);
 }
 #ecommerce h2, #ecommerce p {
 	color: #fff;
 }
+#ecommerce h2 {
+	padding-top: 40px;
+}
 #ecommerce hr {
-	background: #fff;
+	background: #F08114; /* es el color de la linea */	
 }
 #ecommerce h3 {
 	color: #fff;
@@ -541,8 +717,61 @@ ol.type li a:hover {
 	padding: 0 10px;
 	font-size: 15px;
 }
-/* Call Reservation Section */
-#call-reservation {
+
+/* recetas Section */
+#recetas {
+	color: #fff;
+	background: #444 url(../img/products-bg.jpg) center top no-repeat fixed;
+	background-size: cover;
+}
+#recetas .overlay {
+	padding: 10px 0 80px 0; /* era 120px top */
+	background: rgba(0, 0, 0, 0.6);
+}
+#recetas h2, #recetas p {
+	color: #fff;
+}
+#recetas hr {
+	background: #F08114; /* es el color de la linea */	
+}
+#recetas h3 {
+	color: #fff;
+	font-weight: 400;
+	font-size: 20px;
+	margin: 5px 0;
+}
+#recetas img {
+	width: 280px;
+}
+#recetas .thumbnail {
+	background: transparent;
+	border: 0;
+}
+#recetas .thumbnail .team-img {
+	display: inline-block;
+	position: relative;
+}
+#recetas .thumbnail .team-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	left: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#recetas .thumbnail .caption {
+	padding-top: 10px;
+}
+#recetas .thumbnail .caption p {
+	color: rgba(255,255,255,0.7);
+	padding: 0 10px;
+	font-size: 15px;
+}
+
+/* Call Reservation Section cambiar   */
+#call-reservation-old {
 	padding: 90px 0;
 	color: #fff;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8eb640+50,779936+100 */
@@ -553,9 +782,20 @@ ol.type li a:hover {
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F08114', endColorstr='#FFB66F', GradientType=0 ); /* IE6-9 */
 }
 
+#call-reservation {
+	padding: 90px 0;
+	color: #fff;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8eb640+50,779936+100 */
+	/*background: rgb(142,182,64);  Old browsers */
+	background: -moz-linear-gradient(top, rgba(184,126,77,1) 50%, rgba(229,178,135,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(184,126,77,1) 50%, rgba(229,178,135,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(184,126,77,1) 50%, rgba(229,178,135,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B87E4D', endColorstr='#E5B287', GradientType=0 ); /* IE6-9 */
+}
+
 #call-reservation .overlay {
 	padding: 80px 0;
-	background: #8eb640;
+	background: #F08114; /* #8eb640; verde limon*/
 }
 #call-reservation h2 {
 	font-family: 'Kanit', 'Open Sans', sans-serif;
@@ -654,7 +894,7 @@ color: #777;
 	padding: 50px 0 0 0;
 }
 #footer h3 {	
-	color: #F08114; /* era #8eb640 verde*/
+	color: #F08114; /* era #8eb640 verde limon */
 	font-weight: 400;
 	font-size: 18px;
 	text-transform: uppercase;
@@ -697,3 +937,334 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', end
 #footer a:hover {
 	color: #333;
 }
+
+
+/* carousel control arrows */
+/* div exterior del carousel */
+#myCarousel {
+	/*background: rgba(0,0,0,0.4);*/
+}
+
+.carousel-inner {
+	position: relative;
+	width: 60%; /* define size of carousel img */
+	margin-left: 20%; /* adjust centering */
+	margin-right: auto;
+	overflow: hidden;	 
+	background-color: black;	  
+}
+
+.carousel-control.left,
+.carousel-control.right {
+      position: absolute;
+	  background: none;
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+      top: 50%;
+      display: block;
+      transform: translate(0, -50%;)
+    }
+
+.carousel-control.right {
+      right: 0;
+      left: auto;
+}
+
+.carousel-control.left:hover,
+.carousel-control.right:hover {
+    transform: translate(0, -50%;)
+}
+
+.carousel-control {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      font-size: 20px;
+      color: #blue;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+      background-color: rgba(0, 0, 0, 0);
+      filter: alpha(opacity=50);
+      opacity: .5;
+}
+
+.carousel-content {
+	position: absolute; /* relative will show items out of carousel */
+	bottom: 50%;
+	z-index: 20; /* default z-index of carousel is 10 so 20 is higher (overlay) */	
+	
+	/* make it flex for centering */  
+	width: 100%; /* necesario para centrar los childs en todo el ancho del div */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* to display one <p> under the other */
+	/* o tambien: */
+	/*text-align: center;
+	vertical-align: middle;
+	line-height: 90px;       /* The same as your div height */
+}
+
+.item img {
+	width: 100%;
+	opacity: 0.6;	
+}
+
+.carousel-content p {
+	font-family: 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
+	color: #F0D014; /*amarillo, #0A1E65; azul oscuro */
+	font-size: 3em;
+	text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.carousel-hr {
+	height: 2px;
+	width: 70px;
+	text-align: center;
+	position: relative;
+	background: #F08114; /* #8eb640 verde limon */
+	margin: 0;
+	margin-bottom: 40px;
+	border: 0;
+	/*float: left;
+	left: 50%;*/
+	transform: translate(-50%, -50%);
+}
+
+.spacer {
+	height: 100px;
+	background: #F6F6F6;
+}
+
+section.hero {
+  position: relative;
+  top: 89px;
+  height: 250px;
+  
+  /*bottom: 90px;*/  
+}
+
+.restaurant-spacer {
+	height: 200px;
+	background: #F6F6F6;
+}
+
+/* hero Section */
+.hero {
+	display: table;
+	width: 100%;
+	padding: 0;	
+	/*background: url(../img/intro_bg.jpg) no-repeat center center;*/
+	background-color: #e5e5e5;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+.hero .overlay {
+	background: rgba(0,0,0,0.4);
+}
+.hero h1 {
+	font-family: 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
+	/*font-family: 'Dancing Script', cursive;*/
+	color: #ff0000; /*#fff;*/
+	font-size: 5em;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.hero span {
+	color: #a7c44c;
+	font-weight: 600;
+}
+.hero p {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 300;
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+
+/*----------------------------
+	responsive tienda div shop
+----------------------------*/
+
+.div-tienda {
+	display:inline;
+	float: left;
+	margin:0;
+	padding:0;
+}
+
+.div-tienda li {
+	display:inline;
+	padding-left: 10px;
+	font-size: 1.3em;
+}
+
+.div-tienda a {
+	color: #fff; 
+	padding: 2px 4px 4px 2px;
+}
+
+.div-tienda a:hover, a:focus {
+	text-decoration: none;
+	color: #fff; 
+	background-color: #F08114;
+	border-radius: 5px;	
+}
+
+.shop-body {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
+}
+
+/* btn para btn Compre ahora en tienda */
+.cta-btn {
+	margin: 15px;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #3E933E; /*#F08114;*/
+	border: 0;
+	padding: 12px 15px;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	border-radius: 4px;
+	transition: all 0.5s;
+}
+.cta-btn:hover, .cta-btn:focus, .cta-btn.focus, .cta-btn:active, .cta-btn.active {
+	color: #fff;
+	background-color: #3D55A9;
+}
+
+
+/* style para receta individual */
+
+.blog-thumbnail {
+	margin-bottom: 10px;
+}
+
+.post-receta {
+	font-family: 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
+	color: #000;
+	font-size: 1.3em;
+	/*font-weight: 800;*/		
+	padding:10 0 0 70; 
+	margin-bottom: 100px;	
+}
+
+ .blog-content {
+	background: #fff;
+	/*position: absolute;*/
+	/*z-index: 100;*/
+	width: calc(100% - 58px);
+	text-align: left;
+	top: 50%;
+	left: 50%;
+	margin: 15 13 13 15;
+	/*-webkit-transform: translate(-50%, -50%) scale(0);
+	-ms-transform: translate(-50%, -50%) scale(0);
+	transform: translate(-50%, -50%) scale(0);*/
+}
+
+.blog-content ul, p {
+	font-size: 1.1em;
+}
+
+.blog-content h3 {
+	font-weight: 600;
+}
+
+.blog-content a {
+	color: #0A1E65;		
+	padding: 1px 1px 1px;
+	border: 2px solid transparent;
+	letter-spacing: 0.5px;
+	margin: 1px 1px 1px 1px;
+}
+
+.blog-content a:hover, a:focus {
+	text-decoration: none;
+	color: #fff;
+	background-color: #F08114;	
+	border-radius: 5px;
+}
+
+.post-tag {
+	font-size: 1.2em;
+	color: #F08114;
+	/*text-transform: uppercase;*/
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: block;	
+}
+
+.post-meta {
+	position: relative;
+	/*z-index: 1;*/
+	display: inline-block;
+	color: #0A1E65; /*#F08114;*/
+	font-size: 0.8em;
+	/*font-weight: 600;*/
+}
+				
+.post-date span {	
+	color: #F08114;
+	/*text-transform: uppercase;*/
+	margin-top: 2px;
+	/*margin-bottom: 5px;*/
+	display: inline-block;
+}
+
+.post-author span {
+	color: #F08114;
+	/*text-transform: uppercase;*/
+	margin-top: 2px;
+	/*margin-bottom: 5px;*/
+	display: inline-block;
+}
+
+/* skip (inspired by okcupid iphone interface)
+*******************************************************************************/
+button.skip {
+  background-color: #8c9cbf;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8c9cbf), color-stop(50%, #546a9e), color-stop(50%, #36518f), color-stop(100%, #3d5691));
+  background-image: -webkit-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -moz-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -ms-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -o-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  border: 1px solid #172d6e;
+  border-bottom: 1px solid #0e1d45;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 0 0 #b1b9cb;
+  box-shadow: inset 0 1px 0 0 #b1b9cb;
+  color: #fff;
+  font: 16px/1 'Kanit', 'Trebuchet MS', Segoe, 'Segoe UI', Verdana, sans-serif;
+  /*"helvetica neue", helvetica, arial, sans-serif;*/
+  text-transform: uppercase;
+  padding: 7px 0 8px 0;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 -1px 1px #000f4d;
+  width: 200px; }
+  button.skip:hover {
+    background-color: #7f8dad;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7f8dad), color-stop(50%, #4a5e8c), color-stop(50%, #2f477d), color-stop(100%, #364c80));
+    background-image: -webkit-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -moz-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -ms-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -o-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    cursor: pointer; }
+  button.skip:active {
+    -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white; }
+

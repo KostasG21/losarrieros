@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
     <!-- Site metas -->
-	<title>Los Arrieros fonda antioqueña</title>
+	<title>Los Arrieros fonda pura antioqueña</title>
     <meta name="description" content="Los Arrieros fonda pura antioqueña 1965 carnicos blog">    
 	<meta name='author' content='Los Arrieros' />
 	<meta name="distribution" content="global" />
@@ -32,10 +32,16 @@
 	<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
 	<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
 	
+	
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+
+	<!-- prueba con carousel -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -56,14 +62,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-top:5px;">
-        <li><a href="#page-top" class="page-scroll">Home</a></li>
-        <li><a href="#restaurant-menu" class="page-scroll">Restaurante</a></li>
-        <li><a href="#ecommerce" class="page-scroll" id="mula">
-			<img src="img/mula.svg" class="fq-zoom" style="width:60px; margin-top:-32px; padding-top:0;" alt="mula Los Arrieros" />
-		</a></li>
-		<li><a href="#about" class="page-scroll">Nuestra historia</a></li>
-		<li><a href="#contact" class="page-scroll">Contáctenos</a></li>		
-        
+        <li><a href="#page-top" class="page-scroll activo">Inicio</a></li>
+        <li><a href="restaurante.html" class="page-scroll">Restaurante</a></li>
+        <li><a href="tienda.html" class="page-scroll">Tienda</a></li>
+		<li><a href="recetas.html" class="page-scroll">Recetas</a></li>
+		<li><a href="aboutus.html" class="page-scroll">Nosotros</a></li> <!-- Nuestra historia -->		
+        <li><a href="#">Log in</a></li>			
+		<li><a href="tienda.html" class="page-scroll" id="mula">
+			<img src="img/mula.svg" class="fq-zoom" style="width:50px; margin-top:-28px; padding-top:0;" alt="mula Los Arrieros" />
+		</a></li>		        
 		<!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			Servicios <span class="caret"></span></a>
@@ -84,14 +91,14 @@
 
 <!-- Header -->
 <header id="header">
-  <div class="intro">
+  <div class="intro" id="intro-hero">
     <div class="overlay">
       <div class="container">
         <div class="row">
           <div class="intro-text">
             <h1>Los Arrieros</h1>
-            <p>Pura Fonda Antioqueña desde 1965</p>
-            <a href="#about" class="btn btn-custom btn-lg page-scroll">Reservar</a> </div>
+            <p>Fonda Pura Antioqueña desde 1965</p>
+            <a href="tienda.html" class="btn btn-custom btn-lg page-scroll">Ir a la Tienda online</a> </div>
         </div>
       </div>
     </div>
@@ -118,282 +125,84 @@
   </div>
 </div>
 
+
 <!-- Restaurant Menu Section -->
-<div id="restaurant-menu">
-  <div class="section-title text-center center">
-    <div class="overlay">
-      <h2>Menú</h2>
-      <hr>
-      <p>Deguste la mejor comida típica colombiana.</p>
-	  <p>Café y licores.</p>
-	  <p>Menú para niños.</p>
+<!-- carousel platos recomendados antes: id="restaurant-menu" -->
+<div id="recomendados" class="container">
+  <h2 style="text-align: center; padding-top: 30px;">Platos recomendados</h2> 
+  <hr class="carousel-hr">
+  <p style="text-align: center; font-size:1.5em;">Deguste la mejor comida típica colombiana en Los Arrieros</p>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/slide-img1.jpg" class="carousel-img" alt="plato 1">
+		<div class="carousel-content">
+			<p>Bandeja paisa</p>
+			<p>La típica paisa</p>
+		</div>
+      </div>
+
+      <div class="item">
+        <img src="img/slide-img2.jpg" class="carousel-img" alt="plato 2">
+		<div class="carousel-content">
+			<p>Sancocho</p>
+			<p>con plátano maduro y aguacate</p>
+		</div>
+      </div>
+    
+      <div class="item">
+        <img src="img/slide-img3.jpg" class="carousel-img" alt="plato 3">
+		<div class="carousel-content">
+			<p>Cuchuco</p>
+			<p>con espinazo de marrano</p>
+		</div>		
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <img src="img/arrowleft_red.png" style="width:32px;">
+      <span class="sr-only">Previa</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <img src="img/arrowright_red.png" style="width:32px;">
+      <span class="sr-only">Siguiente</span>
+    </a>
   </div>
+  <a href="restaurante.html" class="btn btn-custom btn-lg page-scroll">Ver el Menú</a> </div>
+</div>
+
+<!-- Call Reservation Section -->
+<div id="call-reservation" class="text-center">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="menu-section">
-          <h2 class="menu-section-title">Entradas</h2>
-          <hr>
-          <div class="menu-item">
-            <div class="menu-item-name"> Patacones </div>
-            <div class="menu-item-price"> $35.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Patacones </div>
-            <div class="menu-item-price"> $30.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Patacones </div>
-            <div class="menu-item-price"> $30.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Patacones </div>
-            <div class="menu-item-price"> $30.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="menu-section">
-          <h2 class="menu-section-title">Principales</h2>
-          <hr>
-          <div class="menu-item">
-            <div class="menu-item-name"> Bandeja paisa </div>
-            <div class="menu-item-price"> $45.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Ajiaco </div>
-            <div class="menu-item-price"> $35.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Sancocho </div>
-            <div class="menu-item-price"> $38.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Filete de róbalo </div>
-            <div class="menu-item-price"> $32.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="menu-section">
-          <h2 class="menu-section-title">Postres</h2>
-          <hr>
-          <div class="menu-item">
-            <div class="menu-item-name"> Brevas con arequipe </div>
-            <div class="menu-item-price"> $9.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Torta de zanahoria </div>
-            <div class="menu-item-price"> $14.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Cheesecake </div>
-            <div class="menu-item-price"> $12.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam.. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Tiramisú </div>
-            <div class="menu-item-price"> $14.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="menu-section">
-          <h2 class="menu-section-title">Café y licores</h2>
-          <hr>
-          <div class="menu-item">
-            <div class="menu-item-name"> Aguardiente antioqueño </div>
-            <div class="menu-item-price"> $70.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Ron 8 años </div>
-            <div class="menu-item-price"> $80.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Cuba libre </div>
-            <div class="menu-item-price"> $18.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name"> Ginebra tónica </div>
-            <div class="menu-item-price"> $16.000 </div>
-            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2>¿Quiere hacer una reservación? - Llame al: <strong>316-692-5891</strong></h2>
   </div>
 </div>
 
-<!-- Portfolio Section -->
-<div id="portfolio">
-  <div class="section-title text-center center">
-    <div class="overlay">
-      <h2>Galería del menú</h2>
-      <hr>
-      <p>Dar una mirada a nuestros platos.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="categories">
-        <ul class="cat">
-          <li>
-            <ol class="type">
-              <li><a href="#" data-filter="*" class="active">Todo</a></li>
-              <li><a href="#" data-filter=".breakfast">Desayunar</a></li>
-              <li><a href="#" data-filter=".lunch">Almorzar</a></li>
-              <li><a href="#" data-filter=".dinner">Cenar</a></li>
-            </ol>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="portfolio-items">
-        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Nombre del plato" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Nombre del plato</h4>
-              </div>
-              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="platos del menú"> </a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="spacer"></div>
+
 
 <!-- ecommerce Section -->
 <div id="ecommerce" class="text-center">
   <div class="overlay">
     <div class="container">
       <div class="col-md-10 col-md-offset-1 section-title">
-        <h2>Tienda online</h2>
+        <h2>Las novedades de la Tienda</h2>
         <hr>
         <p>Productos cárnicos de excelente calidad para comprar en línea.</p>
       </div>
       <div id="row">
         <div class="col-md-4 team">
           <div class="thumbnail">
-            <div class="team-img fq-zoom"><img src="img/product1.jpg" alt="..."></div>
+            <div class="team-img fq-zoom-shadow"><img src="img/product1.jpg" alt="..."></div>
             <div class="caption">
               <h3>Chata empacada al vacío</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
@@ -402,7 +211,7 @@
         </div>
         <div class="col-md-4 team">
           <div class="thumbnail">
-            <div class="team-img fq-zoom"><img src="img/product2.jpg" alt="..."></div>
+            <div class="team-img fq-zoom-shadow"><img src="img/product2.jpg" alt="..."></div>
             <div class="caption">
               <h3>Chorizo campesino</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
@@ -411,7 +220,7 @@
         </div>
         <div class="col-md-4 team">
           <div class="thumbnail">
-            <div class="team-img fq-zoom"><img src="img/product3.jpg" alt="..."></div>
+            <div class="team-img fq-zoom-shadow"><img src="img/product3.jpg" alt="..."></div>
             <div class="caption">
               <h3>Jamón serrano</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
@@ -420,14 +229,12 @@
         </div>
       </div>
     </div>
+  <a href="tienda.html" class="btn btn-custom btn-lg page-scroll">Ir a la Tienda online</a> </div>
   </div>
+  
 </div>
-<!-- Call Reservation Section -->
-<div id="call-reservation" class="text-center">
-  <div class="container">
-    <h2>¿Quiere hacer una reservación? - Llame al: <strong>316-692-5891</strong></h2>
-  </div>
-</div>
+
+
 <!-- Contact Section -->
 <div id="contact" class="text-center">
   <div class="container">
@@ -511,22 +318,24 @@
 <script type="text/javascript" src="js/contact_me.js"></script> 
 <script type="text/javascript" src="js/main.js"></script>
 
+
 <script>
 	// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 	window.onscroll = function() {scrollFunction()};
 	
 	function scrollFunction() {
 	  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {			
-		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.9))";
+		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.8))";
 		document.getElementById("logolosarrieros").style.width = "160px";
 		document.getElementById("logolosarrieros").style.marginTop = "-22px";	
 	  } else {
-		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))";
+		document.getElementById("menu").style.backgroundImage = "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.7))";
 		document.getElementById("logolosarrieros").style.width = "200px";
 		document.getElementById("logolosarrieros").style.marginTop = "-32px";
 	  }
 	}
 </script>
+
 
 </body>
 </html>
